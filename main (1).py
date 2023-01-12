@@ -71,7 +71,7 @@ def main():
     else:
         "incorrecto"
 
-    player1.combate(player2)
+    player1.combat(player2)
 
     
 
