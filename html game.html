@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="game.js"></script>
+</head>
+<body>
+    <h2>BATTLE</h2>
+    <p>
+        <script>
+            document.writeln("<label for='p1'>Player 1:</label>")
+            document.writeln("<select id='sp1' name='sp1'>");
+            for(let i=0;i<characters.length;i++) {
+                document.writeln("<option value='"+i+"'>"+characters[i].name+"</option>");
+            }
+            document.writeln("</select>")
+        </script>
+    </p>
+    <p>
+        <script>
+            document.writeln("<label for='p2'>Player 2:</label>")
+            document.writeln("<select id='sp2' name='sp2'>");
+            for(let i=0;i<characters.length;i++) {
+                document.writeln("<option value='"+i+"'>"+characters[i].name+"</option>");
+            }
+            document.writeln("</select>")
+        </script>
+    </p>
+    <p>
+        <script>
+            function fight(){
+                let selectP1 = document.getElementById("sp1");
+                let p1Value = selectP1.value;
+
+                let selectP2 = document.getElementById("sp2");
+                let p2Value = selectP2.value;
+                
+                let engine = new Engine();
+                engine.combat(characters[p1Value], characters[p2Value]);
+            }
+
+            document.writeln("<button type='button' onclick='fight()'>Fight!</button>");
+        </script>
+        
+    </p>
+
+</body>
+</html>
