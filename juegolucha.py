@@ -8,12 +8,10 @@ class Character:
         self.defense = defense
     
     def attacke(self, other_character):
-        #Genera un valor aleatorio para el daño entre 20 y el ataque del personaje, coloque 20 porque de lo contrario si toma 1 el danio va a ser muy pequenio
+        #Genera un valor aleatorio para el daño entre el ataque -40 y el ataque del personaje + 40
         rdattack = random.randint(self.attack-40,self.attack+40)
         rddefense = random.randint(other_character.defense-30,other_character.defense+30)
         damage = rdattack - rddefense
-
-        # Si el daño es mayor a cero, entonces el personaje enemigo recibe el daño
         other_character.hp -= damage
         print(f"{self.name} lanza un ataque de {rdattack}")
         time.sleep(1)
@@ -43,7 +41,7 @@ class Character:
             else:
                 print(f"HP: {self.hp} █")
 
-    def combate(self, player2):
+    def combat(self, player2):
         i=0
         vida1=self.hp
         vida2=player2.hp
